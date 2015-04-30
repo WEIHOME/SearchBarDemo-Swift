@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SearchBarDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="lML-8h-nsy">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="cuJ-AE-bqV"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FpA-Dk-hk9">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="105" id="7Um-gX-Lpo" customClass="CustomTableViewCell" customModule="SearchBarDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Um-gX-Lpo" id="Yw5-ii-0Lt">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clx-GF-vfM">
+                                                    <rect key="frame" x="0.0" y="41" width="600" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Clx-GF-vfM" firstAttribute="top" secondItem="Yw5-ii-0Lt" secondAttribute="top" constant="41" id="7kr-Yv-4HI"/>
+                                                <constraint firstItem="Clx-GF-vfM" firstAttribute="leading" secondItem="Yw5-ii-0Lt" secondAttribute="leading" id="GRF-6N-BKS"/>
+                                                <constraint firstAttribute="trailing" secondItem="Clx-GF-vfM" secondAttribute="trailing" id="Y1r-iN-Cbo"/>
+                                                <constraint firstAttribute="bottom" secondItem="Clx-GF-vfM" secondAttribute="bottom" constant="42" id="pVL-MR-zpY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="Clx-GF-vfM" id="yaE-rL-YHN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lML-8h-nsy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="89u-Xm-0Yy"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="FpA-Dk-hk9" secondAttribute="bottom" id="BQu-qU-9GW"/>
+                            <constraint firstItem="lML-8h-nsy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="S7I-P2-CAZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FpA-Dk-hk9" secondAttribute="trailing" constant="-16" id="SrC-rk-g4F"/>
+                            <constraint firstItem="FpA-Dk-hk9" firstAttribute="top" secondItem="lML-8h-nsy" secondAttribute="bottom" id="XoK-Pr-Cf2"/>
+                            <constraint firstItem="FpA-Dk-hk9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="ha6-kd-mPc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lML-8h-nsy" secondAttribute="trailing" constant="-16" id="hfX-La-LPI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="WFW-2Q-A1m" id="2BF-Lx-WWu"/>
+                        <outlet property="uiSearchBar" destination="lML-8h-nsy" id="JOU-uV-E6g"/>
+                        <outlet property="uiTableView" destination="FpA-Dk-hk9" id="l8i-UU-FBt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="WFW-2Q-A1m">
+                    <connections>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="4ec-58-kVe"/>
+                        <outlet property="searchBar" destination="lML-8h-nsy" id="9h8-gK-fga"/>
+                        <outlet property="searchContentsController" destination="vXZ-lx-hvc" id="pwG-N2-d7l"/>
+                        <outlet property="searchResultsDataSource" destination="vXZ-lx-hvc" id="VFg-FZ-TQd"/>
+                        <outlet property="searchResultsDelegate" destination="vXZ-lx-hvc" id="S7a-uf-pPk"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+        </scene>
+    </scenes>
+</document>
