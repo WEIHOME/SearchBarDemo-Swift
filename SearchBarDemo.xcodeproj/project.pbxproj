@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E00B4751AF414B7004C8286 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E00B4741AF414B7004C8286 /* DetailsViewController.swift */; };
 		4E2DA5391AF2B7B5006734E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2DA5381AF2B7B5006734E0 /* AppDelegate.swift */; };
 		4E2DA53B1AF2B7B5006734E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2DA53A1AF2B7B5006734E0 /* ViewController.swift */; };
 		4E2DA53E1AF2B7B5006734E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E2DA53C1AF2B7B5006734E0 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E00B4741AF414B7004C8286 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		4E2DA5331AF2B7B5006734E0 /* SearchBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E2DA5371AF2B7B5006734E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E2DA5381AF2B7B5006734E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SearchBarDemo/AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				4E2DA53A1AF2B7B5006734E0 /* ViewController.swift */,
 				4E2DA5581AF2BFF5006734E0 /* CustomTableViewCell.swift */,
+				4E00B4741AF414B7004C8286 /* DetailsViewController.swift */,
 				4E2DA5361AF2B7B5006734E0 /* Supporting Files */,
 			);
 			path = SearchBarDemo;
@@ -218,6 +221,7 @@
 				4E2DA5591AF2BFF5006734E0 /* CustomTableViewCell.swift in Sources */,
 				4E2DA53B1AF2B7B5006734E0 /* ViewController.swift in Sources */,
 				4E2DA5391AF2B7B5006734E0 /* AppDelegate.swift in Sources */,
+				4E00B4751AF414B7004C8286 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +418,7 @@
 				4E2DA5541AF2B7B5006734E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E2DA5551AF2B7B5006734E0 /* Build configuration list for PBXNativeTarget "SearchBarDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +427,7 @@
 				4E2DA5571AF2B7B5006734E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

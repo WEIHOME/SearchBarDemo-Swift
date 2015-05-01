@@ -67,6 +67,9 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("showDetails", sender: tableView)
+    }
     
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool {
         self.filterContentForSearchText(searchString)
@@ -87,6 +90,45 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
                 return false
             }
         })
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetails" {
+            if let detailsViewcontroller = segue.destinationViewController as? DetailsViewController{
+                
+                let startFromTableView = sender as? UITableView
+                
+                // Using active property to determine if resultTable is been using.
+                // Donot use startFromTableView == self.searchDisplayController?.searchResultsTableView, this always not equal.
+             
+                if self.searchDisplayController!.active{
+                    let index = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()
+                    let textForDetails = self.filteredData[index!.row]
+                    detailsViewcontroller.pushedData = textForDetails
+                }else{
+                    println(5)
+                    let index = self.uiTableView.indexPathForSelectedRow()
+                    println(self.uiTableView.indexPathForSelectedRow()?.row)
+                    let textForDetails = self.data[index!.row]
+                    
+                    detailsViewcontroller.pushedData = textForDetails
+                    println(6)
+                }
+            
+            }
+        }
+    }
+    
+    @IBAction func unwindToViewController(segue: UIStoryboardSegue) {
+        
+        
+        // Mistake :  Before using unwind, I use self.dismissViewControllerAnimated(true, completion: nil) in DetailsViewController to dimiss the viewcontroller. This will result in the uiTableView lose all data(Altought you still see the cached data in table). Thus when i tap on cell at second 
+        // time, self.uiTableView.indexPathForSelectedRow() will be nil. 
+        
+        // Thus I need to use uiTableView to reload all data before tapping on cell at the second time
+        
+        uiTableView.reloadData()
     }
 }
 

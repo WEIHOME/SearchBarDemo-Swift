@@ -50,6 +50,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="Clx-GF-vfM" id="yaE-rL-YHN"/>
+                                            <segue destination="ixf-m5-SfF" kind="show" identifier="showDetails" id="DA7-21-ECt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -73,6 +74,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <exit id="Kp8-s0-wKO" userLabel="Exit" sceneMemberID="exit"/>
                 <searchDisplayController id="WFW-2Q-A1m">
                     <connections>
                         <outlet property="delegate" destination="vXZ-lx-hvc" id="4ec-58-kVe"/>
@@ -83,6 +85,59 @@
                     </connections>
                 </searchDisplayController>
             </objects>
+            <point key="canvasLocation" x="350" y="387"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="wxg-ay-lSu">
+            <objects>
+                <viewController id="ixf-m5-SfF" customClass="DetailsViewController" customModule="SearchBarDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bGb-6n-gI2"/>
+                        <viewControllerLayoutGuide type="bottom" id="35j-dx-7uK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kWO-Wn-AXl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSb-bM-HUB">
+                                <rect key="frame" x="16" y="262" width="568" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="EnJ-Kn-IBa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKP-xn-cvc">
+                                <rect key="frame" x="16" y="361" width="568" height="114"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Unwind To Controller">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Kp8-s0-wKO" kind="unwind" unwindAction="unwindToViewController:" id="kDh-0i-Nlk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZSb-bM-HUB" firstAttribute="leading" secondItem="kWO-Wn-AXl" secondAttribute="leadingMargin" id="0bh-fH-aNp"/>
+                            <constraint firstItem="jKP-xn-cvc" firstAttribute="leading" secondItem="kWO-Wn-AXl" secondAttribute="leadingMargin" id="82Y-ZJ-Tyu"/>
+                            <constraint firstAttribute="centerX" secondItem="ZSb-bM-HUB" secondAttribute="centerX" id="A0X-Uy-2MS"/>
+                            <constraint firstAttribute="centerY" secondItem="ZSb-bM-HUB" secondAttribute="centerY" constant="18.5" id="JlD-Xh-1hW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jKP-xn-cvc" secondAttribute="trailing" id="XH8-hu-bUQ"/>
+                            <constraint firstItem="jKP-xn-cvc" firstAttribute="top" secondItem="ZSb-bM-HUB" secondAttribute="bottom" constant="60" id="XQ1-VG-YI7"/>
+                            <constraint firstItem="35j-dx-7uK" firstAttribute="top" secondItem="jKP-xn-cvc" secondAttribute="bottom" constant="125" id="XkQ-0H-U5n"/>
+                            <constraint firstItem="ZSb-bM-HUB" firstAttribute="trailing" secondItem="kWO-Wn-AXl" secondAttribute="trailingMargin" id="Ypk-hl-2qf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="ZSb-bM-HUB" id="Nkk-q8-fje"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ims-rH-6FJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066" y="387"/>
         </scene>
     </scenes>
 </document>
