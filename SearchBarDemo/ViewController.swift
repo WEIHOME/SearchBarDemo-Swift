@@ -129,6 +129,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
         // Thus I need to use uiTableView to reload all data before tapping on cell at the second time
         
         uiTableView.reloadData()
+        self.searchDisplayController!.searchResultsTableView.reloadData()
     }
 }
 

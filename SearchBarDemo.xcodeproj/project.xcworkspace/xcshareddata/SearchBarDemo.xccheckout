@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>85AA7141-2572-4D1B-B415-410F6995D8C6</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>SearchBarDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1AF8C642197AA9252E9BFADA77E82EC8B8FFBBE8</key>
 		<string>https://github.com/WEIHOME/SearchBarDemo-Swift.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SearchBarDemo.xcodeproj/project.xcworkspace</string>
+	<string>SearchBarDemo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1AF8C642197AA9252E9BFADA77E82EC8B8FFBBE8</key>
