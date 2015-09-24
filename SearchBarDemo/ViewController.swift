@@ -71,13 +71,13 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
         self.performSegueWithIdentifier("showDetails", sender: tableView)
     }
     
-    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool {
-        self.filterContentForSearchText(searchString)
+    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
+        self.filterContentForSearchText(searchString!)
         return true
     }
     
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
-        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text!)
         return true
     }
     
@@ -103,17 +103,17 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
                 // Donot use startFromTableView == self.searchDisplayController?.searchResultsTableView, this always not equal.
              
                 if self.searchDisplayController!.active{
-                    let index = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()
+                    let index = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow
                     let textForDetails = self.filteredData[index!.row]
                     detailsViewcontroller.pushedData = textForDetails
                 }else{
-                    println(5)
-                    let index = self.uiTableView.indexPathForSelectedRow()
-                    println(self.uiTableView.indexPathForSelectedRow()?.row)
+                    print(5)
+                    let index = self.uiTableView.indexPathForSelectedRow
+                    print(self.uiTableView.indexPathForSelectedRow?.row)
                     let textForDetails = self.data[index!.row]
                     
                     detailsViewcontroller.pushedData = textForDetails
-                    println(6)
+                    print(6)
                 }
             
             }

@@ -162,6 +162,8 @@
 		4E2DA52B1AF2B7B5006734E0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Weihong;
 				TargetAttributes = {
